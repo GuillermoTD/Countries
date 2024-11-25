@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.CountryCard{
+    @apply min-w-[15rem] h-[20rem]  rounded-md;
+
+    img{
+        @apply w-full h-[70%];
+    }
+}

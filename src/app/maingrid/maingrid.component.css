@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.MainGrid{
+    background:green;
+    @apply w-full h-[100%] grid bg-red-500;
+    grid-template-columns:repeat(auto-fill, minmax(14rem, 1fr));
+    gap:1rem;
+    place-items: center;
+}
+
