@@ -5,4 +5,16 @@
 
 *{
     @apply bg-slate-100;
+    outline: none;
+}
+
+svg{
+    background:none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
 }

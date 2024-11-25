@@ -1,0 +1,7 @@
+.Main{
+    @apply w-[100vw] min-h-[100vh]  pt-[3rem];
+    display: flex;
+    justify-content: center;
+}
+
+

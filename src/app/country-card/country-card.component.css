@@ -4,9 +4,15 @@
 
 
 .CountryCard{
-    @apply min-w-[15rem] h-[20rem]  rounded-md;
-
+    @apply min-w-[16rem] w-[24rem] h-[19rem] rounded-md overflow-hidden shadow-md;
+    @apply cursor-pointer;
+    transition:.5s ease-in-out;
     img{
         @apply w-full h-[70%];
     }
+}
+
+.CountryCard:hover{
+    transition:.5s ease-in-out;
+    transform: scale(1.1);
 }

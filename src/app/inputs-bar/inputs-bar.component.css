@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.InputsBar{
+    @apply w-full h-[5rem]  flex justify-center items-center;
+}
+
+.InputsBar_Container{
+    @apply flex items-center justify-between h-[5rem] w-[87%] flex-wrap gap-[0.5rem];
+}
