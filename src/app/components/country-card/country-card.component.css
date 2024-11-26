@@ -8,11 +8,14 @@
     @apply cursor-pointer;
     transition:.5s ease-in-out;
     img{
-        @apply w-full h-[70%];
+        @apply w-full h-[65%];
     }
 }
+
 
 .CountryCard:hover{
     transition:.5s ease-in-out;
     transform: scale(1.1);
 }
+
+
