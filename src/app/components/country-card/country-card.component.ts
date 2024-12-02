@@ -15,7 +15,7 @@ export class CountryCardComponent{
   constructor(private CountryApiService: CountryApiService) { }
 
   ngOnInit(): void {
-    this.CountryApiService.getAllCountries().subscribe(data => {
+    this.CountryApiService.getAll().subscribe(data => {
       this.countries = data
       console.log(this.countries)
       console.log("prueba")
