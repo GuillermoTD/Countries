@@ -1,12 +1,6 @@
-
 <div class="MainGrid">
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-   <app-country-card></app-country-card>
-</div>
+   <div *ngFor="let country of countries">
+     <app-country-card [country]="country"></app-country-card>
+   </div>
+ </div>
+ 

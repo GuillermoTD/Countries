@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CountryApiService } from '../../services/country-api/country-api.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,14 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 
 export class CountryCardComponent{
-  private countries: any[] = [];
-  constructor(private CountryApiService: CountryApiService) { }
+  @Input() country:any;
 
-  ngOnInit(): void {
-    this.CountryApiService.getAll().subscribe(data => {
-      this.countries = data
-      console.log(this.countries)
-      console.log("prueba")
-    });
-  }
+ 
 }
