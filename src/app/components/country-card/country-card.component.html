@@ -1,8 +1,8 @@
 <div class="CountryCard">
-    <a href="#">
+    <a [routerLink]="['country/',idCountry]">
         <img src={{country.href.flag}} alt="countri-image">
         <div class="p-[0.4rem]">
-            <h3 class="font-bold text-[1.3rem]">{{country?.name}}</h3>
+            <p class="font-bold text-[1.2rem]">{{country?.name}}</p>
             <span>
                 <p>Capital: {{country?.capital}}</p>
                 <p>Region: {{country.continent}}</p>

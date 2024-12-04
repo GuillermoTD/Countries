@@ -39,9 +39,6 @@ constructor(private countriesService:CountryApiService){}
 ngOnInit():void{
   this.countriesService.getAll().subscribe(fetchedCountries=>{
     this.countries = fetchedCountries.data
-    console.log(this.countries)
   })
-  console.log("hola")
 }
-  
 }
