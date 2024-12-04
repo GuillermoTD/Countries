@@ -1,10 +1,14 @@
 {
   "/api": {
-    "target": "https://restfulcountries.com/api/v1",
+    "target": "https://freetestapi.com/api/v1/countries",
     "secure": false,
-    "changeOrigin": true,
-    "pathRewrite": {
-      "^/api": ""
-    }
+    "changeOrigin": true
+   
+  },
+  "/id": {
+    "target": "https://freetestapi.com/api/v1/countries/1",
+    "secure": false,
+    "changeOrigin": true
+  
   }
 }

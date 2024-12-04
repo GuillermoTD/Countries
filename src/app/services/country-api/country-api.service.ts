@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class CountryApiService {
  
   private base_url: string = '/api/countries';
+  private countriesByIdUrl: string = 'https://restfulcountries.com/api/v1/countries';
 
   private apiKey: string = '1744|wchhhBvRTeJl0J0uM8p9ao47hYmg4YwzAPDl17JA';
   
@@ -38,7 +39,7 @@ export class CountryApiService {
     this._headers = new HttpHeaders(this._headersConfig);
     console.log(countryId)
 
-    return this.http.get<any>(`${this.base_url}/${countryId}`, { headers:this._headers });
+    return this.http.get<any>(`${this.countriesByIdUrl}/${countryId}`, { headers:this._headers });
 
   }
 
