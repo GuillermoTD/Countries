@@ -4,7 +4,7 @@
 
 
 .CountryCard{
-    @apply min-w-[16rem] w-[24rem] h-[19rem] rounded-md overflow-hidden shadow-md;
+    @apply min-w-[16rem] w-[80%-20px] h-[19rem] rounded-md overflow-hidden shadow-md;
     @apply cursor-pointer;
     transition:.5s ease-in-out;
     img{

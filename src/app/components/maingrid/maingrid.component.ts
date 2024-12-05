@@ -4,12 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountryApiService } from '../../services/country-api/country-api.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { SkeletonLoadingCountriesComponent } from '../skeleton-loading-countries/skeleton-loading-countries.component';
 
 
 @Component({
   selector: 'app-maingrid',
   standalone: true,
-  imports: [CountryCardComponent,HttpClientModule, CommonModule],
+  imports: [CountryCardComponent,HttpClientModule, CommonModule,SkeletonLoadingCountriesComponent],
   templateUrl: './maingrid.component.html',
   styleUrl: './maingrid.component.css',
   providers:[CountryApiService]
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
 export class MainGridComponent {
 
  countries:any[] = []
+ isLoading:boolean = false;
 
 constructor(private countriesService:CountryApiService){}
 
@@ -24,6 +26,7 @@ constructor(private countriesService:CountryApiService){}
 ngOnInit():void{
   this.countriesService.getAll().subscribe(fetchedCountries=>{
     this.countries = fetchedCountries.data
+    this.isLoading = true
   })
 }
 }
