@@ -20,22 +20,7 @@ export class MainGridComponent {
 
 constructor(private countriesService:CountryApiService){}
 
-// fetchAllCountries(): Observable<any> {
-//   return this.countriesService.getAll();
-// }
 
-// getAllCountries():void{
-//   this.fetchAllCountries().subscribe(
-//     (response:any[])=>{
-//       this.countries = response
-//       console.log("se llamò")
-//       console.log(this.countries)
-//     },
-//     (error:any)=>{
-//       console.log("No se pudo consultar la API",error)
-//     }
-//   )
-// }
 ngOnInit():void{
   this.countriesService.getAll().subscribe(fetchedCountries=>{
     this.countries = fetchedCountries.data

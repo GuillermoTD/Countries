@@ -7,6 +7,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 export const routes: Routes = [
     { path: '', component: MainGridComponent },
-    { path: 'country/:id', component: CountryDetailsComponent, pathMatch: "full" },
+    { path: 'country/:name', component: CountryDetailsComponent, pathMatch: "full" },
     { path: '**', component: NotFoundComponent } // Ruta para manejar páginas no encontradas
   ];

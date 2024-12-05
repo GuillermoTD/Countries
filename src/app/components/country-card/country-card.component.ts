@@ -13,10 +13,9 @@ import { RouterLink } from '@angular/router';
 
 export class CountryCardComponent{
   @Input() country:any;
-  @Input() idCountry!:number;
+  @Input() countryName!:string;
 
   ngOnInit(){
-    console.log(typeof this.idCountry)
   }
  
 }

@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CountryApiService {
  
-  private base_url: string = '/api/countries';
+  private base_url: string = 'https://restfulcountries.com/api/v1/countries';
+
   private countriesByIdUrl: string = 'https://restfulcountries.com/api/v1/countries';
 
   private apiKey: string = '1744|wchhhBvRTeJl0J0uM8p9ao47hYmg4YwzAPDl17JA';
@@ -35,16 +36,14 @@ export class CountryApiService {
   // getCountriesByRegion(){
   // }
 
-  getCountriesById(countryId:string):Observable<any>{
+  getCountriesByName(countryName:string):Observable<any>{
     this._headers = new HttpHeaders(this._headersConfig);
-    console.log(countryId)
+    console.log(countryName)
 
-    return this.http.get<any>(`${this.countriesByIdUrl}/${countryId}`, { headers:this._headers });
+    return this.http.get<any>(`${this.base_url}/${countryName}`, { headers:this._headers });
 
   }
 
-  getCountriesByName(): any[] {
-    return this.countries;
-  }
+
  
 }

@@ -1,2 +1,26 @@
-<p>country-details works!</p>
-<p>{{countryId}}</p>
+<div class="flex w-[88vw] m-h-[70%] h-[60%] justify-around flex-wrap mt-[10rem]">
+  <div class="image w-[40%] h-[40%]">
+    <img
+      class="w-[25rem] h-[18rem]"
+      src="{{ country.href.flag }}"
+      alt="country-image"
+    />
+  </div>
+  <div class="details">
+    <p class="text-[2rem] text-bold mb-[1.4rem]">{{country.name}}</p>
+
+    <div class="detailsBox flex gap-[2rem]">
+      <ul class="flex flex-col gap-[1rem]">
+        <li><strong>Name: </strong>{{country.full_name}}</li>
+        <li><strong>Population: </strong>{{country.population}}</li>
+        <li><strong>Region: </strong>{{country.continent}}</li>
+        <li><strong>Capital: </strong>{{country.capital}}</li>
+      </ul>
+      <ul class="flex flex-col gap-[1rem]">
+        <li><strong>Size: </strong>{{country.size}}</li>
+        <li><strong>Currency: </strong>{{country.currency}}</li>
+        <li><strong>phone_code: </strong>{{country.phone_code}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

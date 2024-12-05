@@ -11,20 +11,20 @@ import { CountryApiService } from '../../services/country-api/country-api.servic
 })
 export class CountryDetailsComponent {
 
-  public countryId!:string;
-  private country!:any;
+  public countryName!:string;
+  protected country!:any;
   constructor(private route:ActivatedRoute,private countriesService:CountryApiService){
   }
   
   
   ngOnInit(){
-    this.countryId = this.route.snapshot.paramMap.get('id')!;
+    this.countryName = this.route.snapshot.paramMap.get('name')!;
 
-    this.countriesService.getCountriesById(this.countryId).subscribe(fetchedCountry=>{
+    this.countriesService.getCountriesByName(this.countryName).subscribe(fetchedCountry=>{
       this.country = fetchedCountry.data
       console.log(this.country)
     })
-    console.log('Country ID:', this.countryId);
+    console.log('Country ID:', this.countryName);
   }
 
 
