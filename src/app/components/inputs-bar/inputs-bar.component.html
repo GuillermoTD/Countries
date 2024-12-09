@@ -1,15 +1,15 @@
-<div class="InputsBar ">
+<div class="InputsBar">
   <div class="InputsBar_Container">
-    <label class="shadow-md input input-bordered flex items-center gap-2 bg-slate-200 outlined-none">
+    <label class="relative shadow-md input input-bordered flex items-center gap-2 bg-slate-200 outlined-none">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="h-4 w-4 opacity-70">
         <path fill-rule="evenodd"
           d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
           clip-rule="evenodd" />
       </svg>
-      <input  type="text" class="grow" placeholder="Search for a country..." />
+      <input (keyup.enter)="SearchCountry()" (ngModelChange)="onInputChange($event)" [(ngModel)]="inputText" type="text" class="grow" placeholder="Search for a country..." />
     </label>
 
-    <select class="shadow-md select select-ghost w-full bg-slate-200 max-w-xs">
+    <select (change)="onSelectChange($event)" class="shadow-md select select-ghost w-full bg-slate-200 max-w-xs">
       <option disabled selected>Filter by region</option>
       <option>Africa</option>
       <option>America</option>
@@ -18,5 +18,4 @@
       <option>Oceania</option>
     </select>
   </div>
-
 </div>
