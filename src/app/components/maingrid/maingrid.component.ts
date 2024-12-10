@@ -7,28 +7,33 @@ import { CommonModule } from '@angular/common';
 import { SkeletonLoadingCountriesComponent } from '../skeleton-loading-countries/skeleton-loading-countries.component';
 import { InputsBarComponent } from '../inputs-bar/inputs-bar.component';
 
-
 @Component({
   selector: 'app-maingrid',
   standalone: true,
-  imports: [CountryCardComponent,HttpClientModule, CommonModule,SkeletonLoadingCountriesComponent,InputsBarComponent],
+  imports: [
+    CountryCardComponent,
+    HttpClientModule,
+    CommonModule,
+    SkeletonLoadingCountriesComponent,
+    InputsBarComponent,
+  ],
   templateUrl: './maingrid.component.html',
   styleUrl: './maingrid.component.css',
-  providers:[CountryApiService]
+  providers: [CountryApiService],
 })
 export class MainGridComponent {
+  countries: any[] = [];
+  isLoading: boolean = false;
 
- countries:any[] = []
- isLoading:boolean = false;
+  constructor(private countriesService: CountryApiService) {}
 
-constructor(private countriesService:CountryApiService){}
+  ngOnInit(): void {
+    this.countriesService.getCountries().subscribe((fetchedCountries) => {
+      this.countries = fetchedCountries.data;
+      this.isLoading = true;
+    });
 
-ngOnInit():void{
-  
-  this.countriesService.getAll().subscribe(fetchedCountries=>{
-    this.countries = fetchedCountries.data
-    this.isLoading = true
-  })
   }
+  
+  
 }
-

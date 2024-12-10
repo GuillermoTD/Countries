@@ -31,7 +31,7 @@ export class CountryApiService {
     return this.countriesSubjetct.asObservable()
   }
 
-  getAll(): Observable<any> {
+  getAll(){
     this._headers = new HttpHeaders(this._headersConfig);
     // const headers: HttpHeaders = new HttpHeaders({
     //   'Content-Type': 'application/json',
