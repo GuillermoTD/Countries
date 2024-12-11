@@ -65,8 +65,7 @@ export class InputsBarComponent {
 
   onRegionChange(region: any) {
     if(region){
-      this.countriesService.getCountriesByRegion(region.target.value)
-      console.log(this.countriesService.getCountries())
+      console.log(this.countriesService.getCountriesByRegion(region.target.value).subscribe(fetchedData => console.log(fetchedData)))
     }
  
   }

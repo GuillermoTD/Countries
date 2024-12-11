@@ -46,7 +46,7 @@ export class CountryApiService {
     this._headers = new HttpHeaders(this._headersConfig);
 
     console.log(region);
-
+    
     return this.http
       .get<any>(`${this.base_url}?continent=${region}`, {
         headers: this._headers,

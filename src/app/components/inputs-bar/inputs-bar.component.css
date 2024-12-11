@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 .InputsBar{
-    @apply w-full h-[5rem]  flex justify-center items-center;
+    @apply w-full h-[5rem]  flex justify-center items-center mb-[2rem];
 }
 
 .InputsBar_Container{
-    @apply flex items-center justify-between h-[5rem] w-[87%] flex-wrap gap-[0.5rem];
+    @apply flex items-center justify-between h-[5rem] w-[95%] flex-wrap gap-[0.5rem];
 }
+
