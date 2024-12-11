@@ -31,15 +31,14 @@ export class MainGridComponent {
     this.countriesService.getAll().subscribe((fetchedCountries) => {
       this.countries = fetchedCountries.data;
       this.isLoading = true;
+      console.log('primera carga ' + this.isLoading);
     });
-
-
-    this.countriesService.getCountries().subscribe((fetchedCountries) => {
-      this.countries = fetchedCountries.data;
-      this.isLoading = true;
-    });
-
   }
-  
-  
+  // fetchCountries() {
+  //   this.countriesService.getCountries().subscribe((fetchedCountries) => {
+  //     this.countries = fetchedCountries.data;
+  //     this.isLoading = true;
+  //     console.log('carga despues de filtro' + this.isLoading);
+  //   });
+  // }
 }
