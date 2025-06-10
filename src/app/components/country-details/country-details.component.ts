@@ -23,7 +23,7 @@ export class CountryDetailsComponent {
   ngOnInit(){
     this.countryName = this.route.snapshot.paramMap.get('name')!;
 
-    this.countriesService.getCountriesByName(this.countryName).subscribe(fetchedCountry=>{
+    this.countriesService.getCountriesByName().subscribe((fetchedCountry: { data: any; })=>{
       this.country = fetchedCountry.data
       this.isLoading = true
       console.log(this.country)
