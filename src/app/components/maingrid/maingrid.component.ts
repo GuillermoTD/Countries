@@ -28,7 +28,7 @@ export class MainGridComponent {
   constructor(private countriesService: CountryApiService) {}
 
   ngOnInit(): void {
-    this.countriesService.getAll().subscribe((fetchedCountries) => {
+    this.countriesService.getAllCountries().subscribe((fetchedCountries) => {
       this.countries = fetchedCountries.data;
       this.isLoading = true;
       console.log('primera carga ' + this.isLoading);

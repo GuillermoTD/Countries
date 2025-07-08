@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { provideHttpClient } from '@angular/common/http';
+import { Country } from '../../interfaces/DataInterface';
+// import { provideHttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,21 +10,21 @@ import { provideHttpClient } from '@angular/common/http';
 })
 
 export class CountryApiService {
-  private base_url: string = "https://restcountries.com/v3.1/"
-  private countries: any[] = []
+  private base_url: string = "/api"
+  private countries: Country | undefined;
 
   constructor(private http: HttpClient) { }
 
   getAllCountries(): Observable<any> {
-    return this.http.get<any>(this.base_url + "all")
+    return this.http.get<Country>("/countries")
   }
 
-  getCountriesByRegion(): any[] {
-    return this.countries
+  getCountriesByRegion(region:string): Observable<Country> {
+    return this.http.get<Country>(`${this.base_url }/border/${region}`)
   }
 
-  getCountriesByName(): any[] {
-    return this.countries
+  getCountriesByName(name:string): Observable<Country>  {
+    return this.http.get<Country>(`${this.base_url}/region/${name}`)
   }
 
 }

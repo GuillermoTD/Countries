@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CountryApiService } from '../../services/country-api/country-api.service';
 import { SkeletonLoadingCountryDetailsComponent } from '../skeleton-loading-country-details/skeleton-loading-country-details.component';
 import { CommonModule } from '@angular/common';
+import { Country } from '../../interfaces/DataInterface';
 
 @Component({
   selector: 'app-country-details',
@@ -23,8 +24,8 @@ export class CountryDetailsComponent {
   ngOnInit(){
     this.countryName = this.route.snapshot.paramMap.get('name')!;
 
-    this.countriesService.getCountriesByName().subscribe((fetchedCountry: { data: any; })=>{
-      this.country = fetchedCountry.data
+    this.countriesService.getCountriesByName(this.countryName).subscribe((fetchedCountry: Country)=>{
+      this.country = fetchedCountry
       this.isLoading = true
       console.log(this.country)
     })

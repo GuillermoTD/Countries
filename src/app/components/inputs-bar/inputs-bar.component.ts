@@ -29,7 +29,7 @@ export class InputsBarComponent {
 
     this.countriesService.getCountriesByRegion(option.target.value).subscribe(
       (fetchedCountry) => {
-        this.fetchedData = fetchedCountry.data;
+        this.fetchedData = fetchedCountry;
         // this.router.navigate([`country?continent=${option.target.value}`]);
         console.log(this.fetchedData);
       },
@@ -46,15 +46,12 @@ export class InputsBarComponent {
     console.log(this.inputText);
     this.countriesService.getCountriesByName(this.inputText).subscribe(
       (fetchedCountry) => {
-        this.fetchedData = fetchedCountry.data;
+        this.fetchedData = fetchedCountry;
         console.log(this.fetchedData.name);
         this.router.navigate([`country/${this.fetchedData.name}`]);
       },
       (error) => {
-        // console.error('Error al buscar el país:', error);
         console.error('Pais no encontrado');
-        // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
-        // this.handleError(error);
       }
     );
   }

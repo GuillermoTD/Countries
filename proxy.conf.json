@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://restfulcountries.com/api/v1/countries",
+    "target": "https://www.apicountries.com/",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
