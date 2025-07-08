@@ -47,8 +47,8 @@ export class InputsBarComponent {
     this.countriesService.getCountriesByName(this.inputText).subscribe(
       (fetchedCountry) => {
         this.fetchedData = fetchedCountry;
-        console.log(this.fetchedData.name);
-        this.router.navigate([`country/${this.fetchedData.name}`]);
+        console.log('se supone que le nombre es' + this.fetchedData.name);
+        this.router.navigate([`country/${this.inputText}`]);
       },
       (error) => {
         console.error('Pais no encontrado');
@@ -65,5 +65,6 @@ export class InputsBarComponent {
       console.log(this.countriesService.getCountriesByRegion(region.target.value).subscribe(fetchedData => console.log(fetchedData)))
     }
  
+    
   }
 }

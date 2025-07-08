@@ -4,11 +4,16 @@
 
 
 .CountryCard{
-    @apply min-w-[16rem] w-[80%-20px] h-[19rem] rounded-md overflow-hidden shadow-md;
+    @apply min-w-[18rem] w-[80%] h-[19rem] rounded-md overflow-hidden shadow-md relative;
     @apply cursor-pointer;
     transition:.5s ease-in-out;
-    img{
-        @apply w-full h-[65%];
+
+    .CountryCard_Image{
+        @apply w-full block h-[65%] ;
+
+        img{
+            @apply object-cover;
+        }
     }
 }
 

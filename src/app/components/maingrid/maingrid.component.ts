@@ -29,9 +29,10 @@ export class MainGridComponent {
 
   ngOnInit(): void {
     this.countriesService.getAllCountries().subscribe((fetchedCountries) => {
-      this.countries = fetchedCountries.data;
+      this.countries = fetchedCountries;
       this.isLoading = true;
       console.log('primera carga ' + this.isLoading);
+      console.log(this.countries);
     });
   }
   // fetchCountries() {

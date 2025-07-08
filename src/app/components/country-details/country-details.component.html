@@ -3,24 +3,24 @@
       <div class="image w-[40%] h-[40%] mr-[2rem]">
         <img
           class="w-[23rem] h-[14rem] "
-          src="{{ country.href.flag }}"
+          src="{{ country[0].flags.png }}"
           alt="country-image"
         />
       </div>
       <div class="details">
-        <p class="text-[2rem] text-bold mb-[1.4rem]">{{country.name}}</p>
+        <p class="text-[2rem] text-bold mb-[1.4rem]">{{country[0].name}}</p>
     
         <div class="detailsBox flex gap-[2rem]">
           <ul class="flex flex-col gap-[1rem]">
-            <li><strong>Name: </strong>{{country.full_name}}</li>
-            <li><strong>Population: </strong>{{country.population}}</li>
-            <li><strong>Region: </strong>{{country.continent}}</li>
-            <li><strong>Capital: </strong>{{country.capital}}</li>
+            <li><strong>Name: </strong>{{country[0].name}}</li>
+            <li><strong>Population: </strong>{{country[0].population}}</li>
+            <li><strong>Region: </strong>{{country[0].region}}</li>
+            <li><strong>Capital: </strong>{{country[0].capital}}</li>
           </ul>
           <ul class="flex flex-col gap-[1rem]">
-            <li><strong>Size: </strong>{{country.size}}</li>
-            <li><strong>Currency: </strong>{{country.currency}}</li>
-            <li><strong>phone_code: </strong>{{country.phone_code}}</li>
+            <li><strong>Size: </strong>{{country[0].area + " " + "km"}}</li>
+            <li><strong>Currency: </strong>{{country[0].currencies[0].name}}</li>
+            <li><strong>phone_code: </strong>{{country[0].callingCodes}}</li>
           </ul>
         </div>
       </div>
